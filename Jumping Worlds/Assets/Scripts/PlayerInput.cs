@@ -13,15 +13,6 @@ public class PlayerInput : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-
-        rb.gravityScale = 5;
-        rb.velocity = Vector3.zero;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        moveInput = Input.GetAxis("Horizontal");
     }
 
     private void FixedUpdate()
@@ -31,8 +22,7 @@ public class PlayerInput : MonoBehaviour
 
     private void PlayerMovement()
     {
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y) * Time.deltaTime;
+        moveInput = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(moveInput * speed * Time.deltaTime, rb.velocity.y);
     }
-
-
 }

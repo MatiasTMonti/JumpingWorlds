@@ -8,11 +8,11 @@ public class ChangePositionTouchSides : MonoBehaviour
     {
         if (collision.tag == "RightSide")
         {
-            gameObject.transform.position = new Vector3(-5.25f, collision.gameObject.transform.position.y, -.5f);
+            gameObject.transform.position = new Vector3(-5.25f, gameObject.transform.position.y, -.5f);
         }
         else if(collision.tag == "LeftSide")
         {
-            gameObject.transform.position = new Vector3(7.75f, collision.gameObject.transform.position.y, -.5f);
+            gameObject.transform.position = new Vector3(7.75f, gameObject.transform.position.y, -.5f);
         }
     }
 }
